@@ -2,10 +2,8 @@
   <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
 
     <div class="carousel-inner">
-      <div class="carousel-item" data-bs-interval="10000" *ngFor="let b of bannerResult; let i=index"
-        [ngClass]="{active:i===0}">
-        <img src="httpt://image.tmdb.org/t/p/original/{{b.backdrop_path}}" class="d-block w-100"
-          alt="{{b.title??b.name}}">
+      <div class="carousel-item" data-bs-interval="10000" *ngFor="let b of bannerResult; let i=index" [ngClass]="{active:i===0}">
+        <img src="https://image.tmdb.org/t/p/original/{{b.backdrop_path}}" class="d-block w-100" alt="{{b.title??b.name}}">
 
         <div class="carousel-caption d-none d-md-block">
           <h2>{{b.title??b.name}}</h2>
@@ -24,14 +22,16 @@
   </div>
 </div>
 
+<div class="conteiner my-5">
 
-<div class="row">
-  <h5 class="text-white">Filmes em Destaque</h5>
-  <div class="rowposter mt-3 p-2">
-    <ng-container *ngFor="let t of trendingMovieResult">
-      <img src="https://image.tmdb.org/t/p/original/{{t.poster_path}}" 
-      class="rowimg largeposter" alt="t.title"
-      [routerLink]="['/movie',t.id]">
-    </ng-container>
+  <div class="row">
+    <h5 class="text-white">Filmes em Destaque</h5>
+    <div class="rowposter mt-3 p-2">
+      <ng-container *ngFor="let t of trendingMovieResult">
+        <img src="https://image.tmdb.org/t/p/original/{{t.poster_path}}" 
+        class="rowimg largeposter" alt="t.title"
+        [routerLink]="['/movie',t.id]">
+      </ng-container>
+    </div>
   </div>
 </div>
